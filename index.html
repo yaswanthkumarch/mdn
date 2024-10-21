@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="MD Technologies is a leader in CNC Machineries Manufacturing, providing precision milling, bending, and fabrication services.">
+    <title>MD Technologies</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+       
+        
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+.header {
+    background-color: #0d2d61;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* Relative positioning for header */
+}
+.logo img {
+    width: 80px;
+    height: auto;
+    border-radius: 10px;
+}
+.nav-links {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.nav-links li {
+    margin: 0 10px;
+}
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+}
+.menu-toggle {
+    display: none; /* Hide by default */
+}
+.bar {
+    height: 2px;
+    width: 25px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: transform 0.4s; /* Smooth transition for transform */
+}
+/* Cross effect when the menu is active */
+.menu-toggle.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px); /* Rotate and move the first bar */
+}
+.menu-toggle.active .bar:nth-child(2) {
+    opacity: 0; /* Hide the middle bar */
+}
+.menu-toggle.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px); /* Rotate and move the third bar */
+}
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: relative;
+        top: 0;
+        background-color: #0d2d61;
+        padding: 20px 0;
+        align-items: center;
+    }
+    .nav-links.active {
+        display: flex;
+        margin-bottom: 20px;
+    }
+    .menu-toggle {
+        display: flex; /* Show on mobile */
+        flex-direction: column;
+        cursor: pointer;
+        position: absolute; /* Positioning relative to header */
+        right: 20px; /* Distance from right */
+        top: 15px; /* Distance from top */
+        z-index: 10; /* Ensure it's above other elements */
+    }
+    .header-content {
+        margin-top: 60px;
+    }
+}
+.header-content {
+    position: relative;
+    text-align: center;
+    background-color: #fff;
+    width: 100%;
+}
+.header-content img {
+    width: 100%;
+    height: auto;
+    max-height: 600px; /* Adjust this for desired image height */
+    object-fit: cover;
+}
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+.text-overlay h2 {
+    font-size: 40px;
+    margin: 10px 0;
+    animation: zoomInOut 3s infinite;
+}
+.text-overlay p {
+    font-size: 24px;
+}
+.header-content .ctn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: blue;
+    font-size: 25px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s;
+    z-index: 3;
+}
+.header-content .ctn:hover {
+    background-color: green;
+}
+@keyframes zoomInOut {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.box {
+    background: peachpuff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    flex: 1;
+    min-width: 300px;
+    transition: transform 0.3s;
+    vertical-align: top;
+}
+.box:hover {
+    transform: scale(1.05);
+}
+.content {
+    text-align: left;
+    font-size: 24px;
+}
+footer {
+    background-color: #0d2d61;
+    color: #fff;
+    padding: 40px 0;
+    margin-top: 20px;
+}
+.container1 {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    text-align: center;
+    font-size: 25px;
+    flex-direction: column;
+}
+.contact-info {
+    flex: 1;
+    list-style: none;
+    padding: 0;
+}
+.contact-info li {
+    margin: 10px 0;
+}
+.contact-info li i {
+    margin-right: 8px; /* Space between icon and text */
+}
+.google-map {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    margin: auto;
+}
+.google-map iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+/* Horizontal Scrolling Clients Section */
+#Clients {
+    overflow: hidden;
+    white-space: nowrap;
+}
+.client-list {
+    display: inline-block;
+    animation: scrollClients 15s linear infinite;
+}
+.client-list li {
+    display: inline-block;
+    font-size: 24px;
+    padding: 0 20px;
+}
+@keyframes scrollClients {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+@media (max-width: 768px) {
+    .header-content {
+        padding: 15px;
+    }
+    .container {
+        padding: 10px;
+    }
+}
+
+    </style>
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="mdn.png" alt="Logo">
+        </div>
+        <nav>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#header-content">Home</a></li>
+                <li><a href="#About">About</a></li>
+                <li><a href="#Clients">Our Clients</a></li>
+                <li><a href="#infrastructure">Infrastructure</a></li>
+                <li><a href="#footer">Contact Us</a></li>
+            </ul>
+            <div class="menu-toggle" id="hamburger" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="header-content" id="header-content">
+        <div class="image-container">
+            <img src="img.jpeg" alt="CNC Machineries">
+            <div class="text-overlay">
+                <h2>MD Technologies, Vishakapatnam</h2>
+                <p><strong>CNC Machineries Manufacturing.<br>Here Manufacturing all kinds of CNC milling and <br>bending/turning jobs take place.</strong></p>
+            </div>
+        </div>
+        <a href="#About" class="ctn">Get Started</a>
+    </div>
+
+    <div class="container" id="About">
+        <h1>About Us</h1>
+        <div class="box">
+            <h2>Our Vision</h2>
+            <p>"To be the global leader in precision manufacturing, renowned for pioneering advanced CNC milling, bending, and fabrication solutions that drive innovation and exceed industry standards."</p>
+        </div>
+        <div class="box">
+            <h2>Our Mission</h2>
+            <p>"To deliver top-tier CNC machining services that empower our clients' success through precision, quality, and reliability."</p>
+        </div>
+        <div class="box">
+            <h2>Our Values</h2>
+            <p>Integrity, innovation, and customer-centricity form the core of our business philosophy, guiding every decision we make.</p>
+        </div>
+    </div>
+
+    <div class="container" id="infrastructure">
+        <h1>Infrastructure</h1>
+        <div class="box">
+            <h2>Our Infrastructure</h2>
+            <p>We pride ourselves on state-of-the-art facilities equipped with cutting-edge technology to ensure high-quality production.</p>
+        </div>
+    </div>
+
+    <div id="Clients">
+        <h1>Our Clients</h1>
+        <ul class="client-list">
+            <li>Client A</li>
+            <li>Client B</li>
+            <li>Client C</li>
+            <li>Client D</li>
+            <li>Client E</li>
+        </ul>
+    </div>
+
+    <footer id="footer">
+        <div class="container1">
+            <h1>Contact Us</h1>
+            <ul class="contact-info">
+                <li><i class="fas fa-phone"></i> +91 12345 67890</li>
+                <li><i class="fas fa-envelope"></i> info@mdtechnologies.com</li>
+                <li><i class="fas fa-building"></i> Address: Vishakapatnam, Andhra Pradesh, India</li>
+       
+            </ul>
+            <div class="google-map">
+                <iframe src="https://maps.google.com/maps?q=md%20technologies%20vishakapatnam&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
